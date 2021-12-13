@@ -32,6 +32,9 @@ body {
     z-index: 98;
 
 }
+.content{
+    width:500px; height:300px
+}
 
 /*---------------------- body_left -------------------------*/
 

@@ -125,13 +125,45 @@ function Rise() {
 
 }
 
+
+function timer1() {
+var start = new Date(2021,11,5,0,20,0); // 2021.12.05
+console.log(start);
+
+var t =  new Date() - start;
+console.log(t);
+var h = ~~(t / 1000 / 60 / 60 % 24);
+if (h < 10) {
+    h = "0" + h;
+}
+var m = ~~(t / 1000 / 60 % 60);
+if (m < 10) {
+    m = "0" + m;
+}
+var s = ~~(t / 1000 % 60);
+if (s < 10) {
+    s = "0" + s;
+}
+document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
+document.getElementById('h').innerHTML = h;
+document.getElementById('m').innerHTML = m;
+document.getElementById('s').innerHTML = s;
+}
+
+
+
 window.onload = function () {
+    
     setTimeout(() => {
 
         timer = setInterval(() => {
             Next();
+           
         }, 300);
-
+        
+        
 
     }, 12000);   //gif图播放完毕所需时间为11.73s
+
+    setInterval(() =>{timer1();},1000);
 };
