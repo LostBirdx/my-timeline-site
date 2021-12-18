@@ -1,27 +1,153 @@
 const blk_pitn = { //各小方块相对【自身中心】的位置 -- 【自身中心】确定为#div22的方块
-        block1: [[0, 1], [0, 0], [-1, 0], [-1, -1]],
-        block2: [[0, 1], [0, 0], [-1, 0], [0, -1]],
-        block3: [[-1, 1], [0, 0], [-1, 0], [-1, -1]],
-        block4: [[0, 1], [0, 0], [-1, 0], [-1, -1]], /* 1 */
-        block5: [[-1, 1], [0, 0], [-1, 0], [0, -1]],
-        block6: [[0, -1], [0, 0], [-1, 0], [1, -1]],
-        block7: [[-1, -1], [0, 0], [-1, 0], [1, 0]],
-        block8: [[-1, 1], [0, 0], [-1, 0], [-1, -1]], /* 3 */
-        block9: [[0, -1], [0, 0], [-1, 0], [1, 0]],
-        block10: [[-1, 1], [0, 0], [-1, 0], [1, 0]],
-        block11: [[2, 0], [0, 0], [-1, 0], [1, 0]], /* — */
-        block12: [[0, 1], [0, 0], [-1, 0], [0, -1]], /* 2 */
-        block13: [[0, 1], [0, 0], [-1, 0], [-1, -1]], /* 1 */
-        block14: [[1, 1], [0, 0], [-1, 0], [1, 0]],
-        block15: [[1, -1], [0, 0], [-1, 0], [1, 0]],
-        block16: [[-1, -1], [0, 0], [-1, 0], [1, 0]], /* 7 */
-        block17: [[0, 1], [0, 0], [-1, 0], [0, -1]], /* 2 */
-        block18: [[0, 1], [0, 0], [-1, 0], [-1, -1]], /* 1 */
-        block19: [[0, -1], [0, 0], [-1, 0], [1, 0]], /* 9 */
-        block20: [[1, -1], [0, 0], [-1, 0], [1, 0]],
-        block21: [[0, 1], [0, 0], [-1, 0], [-1, -1]], /* 1 */
-        block22: [[1, 1], [0, 0], [-1, 0], [1, 0]], /* 14 */
-        block23: [[0, 2], [0, 0], [0, -1], [0, 1]]      /* | */
+        block1: [
+            [0, 1],
+            [0, 0],
+            [-1, 0],
+            [-1, -1]
+        ],
+        block2: [
+            [0, 1],
+            [0, 0],
+            [-1, 0],
+            [0, -1]
+        ],
+        block3: [
+            [-1, 1],
+            [0, 0],
+            [-1, 0],
+            [-1, -1]
+        ],
+        block4: [
+            [0, 1],
+            [0, 0],
+            [-1, 0],
+            [-1, -1]
+        ],
+        /* 1 */
+        block5: [
+            [-1, 1],
+            [0, 0],
+            [-1, 0],
+            [0, -1]
+        ],
+        block6: [
+            [0, -1],
+            [0, 0],
+            [-1, 0],
+            [1, -1]
+        ],
+        block7: [
+            [-1, -1],
+            [0, 0],
+            [-1, 0],
+            [1, 0]
+        ],
+        block8: [
+            [-1, 1],
+            [0, 0],
+            [-1, 0],
+            [-1, -1]
+        ],
+        /* 3 */
+        block9: [
+            [0, -1],
+            [0, 0],
+            [-1, 0],
+            [1, 0]
+        ],
+        block10: [
+            [-1, 1],
+            [0, 0],
+            [-1, 0],
+            [1, 0]
+        ],
+        block11: [
+            [2, 0],
+            [0, 0],
+            [-1, 0],
+            [1, 0]
+        ],
+        /* — */
+        block12: [
+            [0, 1],
+            [0, 0],
+            [-1, 0],
+            [0, -1]
+        ],
+        /* 2 */
+        block13: [
+            [0, 1],
+            [0, 0],
+            [-1, 0],
+            [-1, -1]
+        ],
+        /* 1 */
+        block14: [
+            [1, 1],
+            [0, 0],
+            [-1, 0],
+            [1, 0]
+        ],
+        block15: [
+            [1, -1],
+            [0, 0],
+            [-1, 0],
+            [1, 0]
+        ],
+        block16: [
+            [-1, -1],
+            [0, 0],
+            [-1, 0],
+            [1, 0]
+        ],
+        /* 7 */
+        block17: [
+            [0, 1],
+            [0, 0],
+            [-1, 0],
+            [0, -1]
+        ],
+        /* 2 */
+        block18: [
+            [0, 1],
+            [0, 0],
+            [-1, 0],
+            [-1, -1]
+        ],
+        /* 1 */
+        block19: [
+            [0, -1],
+            [0, 0],
+            [-1, 0],
+            [1, 0]
+        ],
+        /* 9 */
+        block20: [
+            [1, -1],
+            [0, 0],
+            [-1, 0],
+            [1, 0]
+        ],
+        block21: [
+            [0, 1],
+            [0, 0],
+            [-1, 0],
+            [-1, -1]
+        ],
+        /* 1 */
+        block22: [
+            [1, 1],
+            [0, 0],
+            [-1, 0],
+            [1, 0]
+        ],
+        /* 14 */
+        block23: [
+            [0, 2],
+            [0, 0],
+            [0, -1],
+            [0, 1]
+        ] /* | */
     },
     offset_pitn = { //各方块block相对【爱心中心】的位置
         block1: [5, 3],
@@ -35,7 +161,8 @@ const blk_pitn = { //各小方块相对【自身中心】的位置 -- 【自身�
         block9: [1, -3],
         block10: [1, 2],
         block11: [0, 3],
-        block12: [0, 0], /* 【爱心中心】*/
+        block12: [0, 0],
+        /* 【爱心中心】*/
         block13: [-1, -4],
         block14: [0, -2],
         block15: [-2, 4],
@@ -46,15 +173,15 @@ const blk_pitn = { //各小方块相对【自身中心】的位置 -- 【自身�
         block20: [-3, 5],
         block21: [-5, 3],
         block22: [-4, 1],
-        block23: [-6, 1]    /* 因动画需要移动一个方块，故y轴坐标-1*/
+        block23: [-6, 1] /* 因动画需要移动一个方块，故y轴坐标-1*/
     };
 
 let blocks = document.getElementsByClassName("block"),
     block = blocks[0],
     love = document.getElementsByClassName("love")[0],
     timer = null,
-    index = 0,  //记录拼接爱心的动画步骤
-    clone_block;    //用于克隆方块
+    index = 0, //记录拼接爱心的动画步骤
+    clone_block; //用于克隆方块
 
 //1.移动方块的【自身中心】到【爱心中心】
 block.style.top = "50%";
@@ -62,7 +189,7 @@ block.style.left = "50%";
 block.style.margin = "-20px 0 0 -20px";
 
 const block_left = parseFloat(window.getComputedStyle(block, null).left.slice(0, -2)), //【爱心中心】 左边距离父元素的距离
-    block_top = parseFloat(window.getComputedStyle(block, null).top.slice(0, -2));  //【爱心中心】 顶部距离父元素的距离
+    block_top = parseFloat(window.getComputedStyle(block, null).top.slice(0, -2)); //【爱心中心】 顶部距离父元素的距离
 
 function Next() {
     if (++index >= 24) {
@@ -92,7 +219,7 @@ function Next() {
 
     if (love.children.length >= 24) {
         blocks[blocks.length - 1].children[2].style.display = "none"; //去掉多余的小方块
-        block.style.display = "none";   //隐藏多出的block方块
+        block.style.display = "none"; //隐藏多出的block方块
     }
 }
 
@@ -102,11 +229,12 @@ function Rise() {
     let timer2 = null,
         distance = 0;
     /* 升高时，移动的距离*/
-    const target = 120, /* 目标距离*/
+    const target = 120,
+        /* 目标距离*/
         speed = 1;
     /*移动速度*/
 
-    let love_top = parseFloat(window.getComputedStyle(love, null).top.slice(0, -2));  //爱心盒子距离屏幕顶部的距离
+    let love_top = parseFloat(window.getComputedStyle(love, null).top.slice(0, -2)); //爱心盒子距离屏幕顶部的距离
 
 
     timer2 = setInterval(() => {
@@ -127,43 +255,43 @@ function Rise() {
 
 
 function timer1() {
-var start = new Date(2021,11,5,0,20,0); // 2021.12.05
-console.log(start);
+    var start = new Date(2021, 11, 5, 08, 16, 0); // 2021.12.05.08.16
+    console.log(start);
 
-var t =  new Date() - start;
-console.log(t);
-var h = ~~(t / 1000 / 60 / 60 % 24);
-if (h < 10) {
-    h = "0" + h;
-}
-var m = ~~(t / 1000 / 60 % 60);
-if (m < 10) {
-    m = "0" + m;
-}
-var s = ~~(t / 1000 % 60);
-if (s < 10) {
-    s = "0" + s;
-}
-document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
-document.getElementById('h').innerHTML = h;
-document.getElementById('m').innerHTML = m;
-document.getElementById('s').innerHTML = s;
+    var t = new Date() - start;
+    console.log(t);
+    var h = ~~(t / 1000 / 60 / 60 % 24);
+    if (h < 10) {
+        h = "0" + h;
+    }
+    var m = ~~(t / 1000 / 60 % 60);
+    if (m < 10) {
+        m = "0" + m;
+    }
+    var s = ~~(t / 1000 % 60);
+    if (s < 10) {
+        s = "0" + s;
+    }
+    document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
+    document.getElementById('h').innerHTML = h;
+    document.getElementById('m').innerHTML = m;
+    document.getElementById('s').innerHTML = s;
 }
 
 
 
-window.onload = function () {
-    
+window.onload = function() {
+
     setTimeout(() => {
 
         timer = setInterval(() => {
             Next();
-           
+
         }, 300);
-        
-        
 
-    }, 12000);   //gif图播放完毕所需时间为11.73s
 
-    setInterval(() =>{timer1();},1000);
+
+    }, 12000); //gif图播放完毕所需时间为11.73s
+
+    setInterval(() => { timer1(); }, 1000);
 };
